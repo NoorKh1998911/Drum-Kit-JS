@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <div class="keys">
+
+    <div class="key A">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+
+    <div class="key S">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+
+    <div class="key D">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+
+    <div class="key F">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+
+    <div class="key G">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+
+    <div class="key H">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+
+    <div class="key J">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+
+    <div class="key K">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+
+    <div class="key L">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+
+  </div>
+
+<script>
+ 
+  /*Add keypress function which will describe what will happen
+   when a particular key is produced. Here we will produce the sound effect */
+
+document.addEventListener("keypress", function(event) {
+  sound(event.key);
+  animation(event.key);
+});
+
+/*Now we will code sound() function. It will tell which sound should
+ be played when we press or/and click a specific key.*/
+
+function sound(key) {
+switch (key) {
+	case "A":
+	var sound1 = new Audio("sounds/clap.wav");
+	sound1.play();
+	break;
+
+	case "S":
+	var sound2 = new Audio("sounds/hihat.wav");
+	sound2.play();
+	break;
+
+	case "D":
+	var sound3 = new Audio("sounds/kick.wav");
+	sound3.play();
+	break;
+
+	case "F":
+	var sound4 = new Audio("sounds/openhat.wav");
+	sound4.play();
+	break;
+
+	case "G":
+	var sound5 = new Audio("sounds/boom.wav");
+	sound5.play();
+	break;
+
+	case "H":
+	var sound6 = new Audio("sounds/ride.wav");
+	sound6.play();
+	break;
+
+	case "J":
+	var sound7 = new Audio("sounds/snare.wav");
+	sound7.play();
+	break;
+
+  case "K":
+	var sound7 = new Audio("sounds/tom.wav");
+	sound7.play();
+	break;
+
+  case "L":
+	var sound7 = new Audio("sounds/tink.wav");
+	sound7.play();
+	break;
+
+	default: console.log(key);
+}
+}
+/*Animation Function*/
+function animation(currentKey) {
+var activeButton = document.querySelector("." + currentKey);
+
+activeButton.classList.add("animation");
+
+setTimeout(function() {
+	activeButton.classList.remove("animation");
+}, 100);
+}
+
+
+</script>
+
+</body>
+</html>
